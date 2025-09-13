@@ -1,3 +1,19 @@
+# Azure-Cloud-Projects
+My Azure projects for portfolio
+
+# 📘 Azure Resource Group Lab
+
+## 📌 Overview
+This project demonstrates the design and deployment of a **secure and scalable network environment in Azure**.
+
+The resources were created manually in the **Azure Portal**, and the configuration was later exported as **ARM templates** for documentation and reproducibility.
+
+The lab simulates a real-world scenario with frontend and backend workloads behind a **Standard Load Balancer**, protected by **Network Security Groups (NSGs)**, and with outbound connectivity via **NAT Gateway**.
+
+---
+
+## 🗂 Project Structure
+```plaintext
 Azure-Cloud-Projects/
 │
 ├── Diagram/
@@ -10,6 +26,7 @@ Azure-Cloud-Projects/
 │
 └── README.md              # Project documentation
 
+
 ---
 
 ## 🔧 Deployment Method
@@ -20,7 +37,7 @@ Azure-Cloud-Projects/
 ---
 
 ## 📊 Architecture Diagram
-![Azure Lab Diagram](Diagram/RG-Lab.png)
+![Azure Lab Diagram](https://github.com/ricardod-23/Azure-Cloud-Projects/blob/main/1-VNet-LB/Diagram/RG-Lab.drawio)
 
 ---
 
