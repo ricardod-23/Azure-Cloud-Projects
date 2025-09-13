@@ -17,7 +17,7 @@ Azure-Cloud-Projects/
 │
 ├── Diagram/
 │   ├── RG-Lab.drawio      # Editable network diagram (Draw.io)
-│   └── RG-Lab.png         # Exported diagram for documentation
+│   └── RG-Lab.jpg         # Exported diagram for documentation
 │
 ├── RG-Lab/
 │   ├── parameters.json    # Parameters file (exported from Azure Portal)
