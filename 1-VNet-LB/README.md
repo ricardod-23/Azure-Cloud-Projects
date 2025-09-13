@@ -13,7 +13,7 @@ The lab simulates a real-world scenario with frontend and backend workloads behi
 ---
 
 ## 🗂 Project Structure
-
+```plaintext
 Azure-Cloud-Projects/
 │
 ├── Diagram/
@@ -24,20 +24,18 @@ Azure-Cloud-Projects/
 │   ├── parameters.json    # Parameters file (exported from Azure Portal)
 │   └── template.json      # ARM template (exported from Azure Portal)
 │
-└── README.md              # Project documentation /
-
-🔧 Deployment Method/
-
+└── README.md              # Project documentation
+---
+## 🔧 Deployment Method
 All resources were deployed manually through the Azure Portal.
 
 After deployment, the ARM template and parameters file were exported for reusability.
 
 This workflow demonstrates both portal-based deployment and infrastructure as code documentation.
 
-📊 Architecture Diagram
+## 📊 Architecture Diagram
 
 ⚙️ Components Deployed
-
 Virtual Network (VNet): Address space 10.0.0.0/16
 
 Subnets:
@@ -65,7 +63,6 @@ Installed NGINX web server on both VMs for testing
 NAT Gateway: Provides outbound internet access for the VMs
 
 🎯 Key Skills Demonstrated
-
 Azure Portal Management: Designed and deployed a complete environment manually
 
 Infrastructure as Code (IaC): Exported ARM templates to capture and reuse deployment configuration
@@ -79,7 +76,6 @@ Service Deployment: Installed and tested NGINX on VMs to validate end-to-end con
 Documentation: Produced network diagram and README for clarity and interview readiness
 
 🚀 Next Steps / Improvements
-
 Automate deployment using Bicep or Terraform instead of portal export
 
 Add Azure Firewall for centralized traffic inspection
