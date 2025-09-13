@@ -58,7 +58,6 @@ Azure-Cloud-Projects/
   - **Frontend IP**: PIP-LB **(Static Public IP)**.
   - **Backend pool**: Includes both **FE-VM and BE-VM**.
   - **Load balancing rule** forwards traffic on port **80(TCP)**.  
-  - The **backend pool** includes the **FE-VM**.
   - **Health probe**: Configured on **HTTP/80** for monitoring VM availabilit 
 
 - **Virtual Machines (VMs):**  
