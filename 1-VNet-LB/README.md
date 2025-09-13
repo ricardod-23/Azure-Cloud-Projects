@@ -42,20 +42,24 @@ Azure-Cloud-Projects/
 
 ---
 
+---
+
 ## ⚙️ Components Deployed
-- **Virtual Network (VNet):** Address space `10.0.0.0/16`  
-- **Subnets:**  
-  - `Subnet-FE (10.0.1.0/24)` → frontend VM  
-  - `Subnet-BE (10.0.2.0/24)` → backend VM  
-- **Network Security Groups (NSGs):**  
-  - Allow inbound **HTTP (80)**  
-  - Deny all other inbound traffic  
-- **Standard Load Balancer:** Distributes HTTP traffic between FE and BE VMs  
-- **Virtual Machines:**  
-  - One VM in **Subnet-FE**  
-  - One VM in **Subnet-BE**  
-  - Installed **NGINX web server** on both VMs for testing  
-- **NAT Gateway:** Provides outbound internet access for the VMs  
+- **Virtual Network (VNet):** `10.0.0.0/16`
+- **Subnets:**
+  - `Subnet-FE (10.0.1.0/24)` → For public-facing web servers.
+  - `Subnet-BE (10.0.2.0/24)` → For backend services, isolated from the internet.
+- **Network Security Groups (NSGs):**
+  - **NSG-FE:** Secures the frontend subnet. Allows inbound **HTTP (80)** from the internet.
+  - **NSG-BE:** Secures the backend subnet. Denies traffic from the internet and allows traffic **only from the frontend subnet's address space (`10.0.1.0/24`)**.
+- **Standard Load Balancer:**
+  - Has a public IP for frontend access.
+  - A load balancing rule forwards traffic on **port 80** to its backend pool.
+  - The backend pool contains the **frontend VM (FE-VM)**.
+- **Virtual Machines:**
+  - **FE-VM:** Deployed in `Subnet-FE`. Runs an NGINX web server to serve user requests.
+  - **BE-VM:** Deployed in `Subnet-BE`. Runs a backend service (NGINX used for simulation) accessible only by the FE-VM.
+- **NAT Gateway:** Associated with both subnets to provide the VMs with secure outbound internet access without exposing them to inbound connections.
 
 ---
 
