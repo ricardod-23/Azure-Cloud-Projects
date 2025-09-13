@@ -41,31 +41,49 @@ Azure-Cloud-Projects/
 ---
 
 ## ⚙️ Components Deployed
-- **Virtual Network (VNet):** `10.0.0.0/16`
-- **Subnets:**
-  - `Subnet-FE (10.0.1.0/24)` → For public-facing web servers.
-  - `Subnet-BE (10.0.2.0/24)` → For backend services, isolated from the internet.
-- **Network Security Groups (NSGs):**
-  - **NSG-FE:** Secures the frontend subnet. Allows inbound **HTTP (80)** from the internet.
-  - **NSG-BE:** Secures the backend subnet. Denies traffic from the internet and allows traffic **only from the frontend subnet's address space (`10.0.1.0/24`)**.
-- **Standard Load Balancer:**
-  - Has a public IP for frontend access.
-  - A load balancing rule forwards traffic on **port 80** to its backend pool.
-  - The backend pool contains the **frontend VM (FE-VM)**.
-- **Virtual Machines:**
-  - **FE-VM:** Deployed in `Subnet-FE`. Runs an NGINX web server to serve user requests.
-  - **BE-VM:** Deployed in `Subnet-BE`. Runs a backend service (NGINX used for simulation) accessible only by the FE-VM.
-- **NAT Gateway:** Associated with both subnets to provide the VMs with secure outbound internet access without exposing them to inbound connections.
 
+- **Virtual Network (VNet):** Address space `10.0.0.0/16`  
+
+- **Subnets:**  
+  - **Subnet-FE (10.0.1.0/24):** Hosts the **frontend VM**.  
+  - **Subnet-BE (10.0.2.0/24):** Hosts the **backend VM**.  
+
+- **Network Security Groups (NSGs):**  
+  - NSG-FE and NSG-BE with identical rules:  
+    - Allow inbound **HTTP (80)** from Internet
+    - Allow inbound HTTP (80) from AzureLoadBalancer (for health probes)
+    - Deny all other inbound traffic  
+
+- **Standard Load Balancer (LB-Public):**  
+  - Frontend IP: PIP-LB **(Static Public IP)**.
+  - Backend pool: Includes both **FE-VM and BE-VM**.
+  - **Load balancing rule** forwards traffic on port **80(TCP)**.  
+  - The **backend pool** includes the **FE-VM**.
+  - Health probe: Configured on **HTTP/80** for monitoring VM availabilit 
+
+- **Virtual Machines (VMs):**  
+  - **FE-VM:** Ubuntu 22.04, size Standard_D2s_v3, Spot instance. Runs **NGINX web server**.  
+  - **BE-VM:** Ubuntu 22.04, size Standard_B1ls. Runs **NGINX backend service** (simulation).
+  - Both configured with auto-shutdown schedules for cost optimization.
+
+- **NAT Gateway(NAT-Lab):**  
+  - Provides secure outbound internet access via PIP-NAT (Static Public IP)
 ---
 
 ## 🎯 Key Skills Demonstrated
-- **Azure Portal Management:** Designed and deployed a complete environment manually  
-- **Infrastructure as Code (IaC):** Exported ARM templates to capture and reuse deployment configuration  
-- **Network Security:** Implemented NSG rules to restrict inbound traffic and allow only HTTP  
-- **Load Balancing:** Configured Standard Load Balancer for traffic distribution  
-- **Service Deployment:** Installed and tested NGINX on VMs to validate end-to-end connectivity  
-- **Documentation:** Produced network diagram and README for clarity and interview readiness  
+- **Azure Portal Management**: Designed and deployed a complete environment manually.
+
+- **Infrastructure as Code (IaC)**: Exported ARM templates for reproducibility.
+
+- **Network Security**: Implemented NSG rules to strictly control inbound traffic.
+
+- **Load Balancing & High Availability**: Configured a Standard Load Balancer with HTTP health probes.
+
+- **VM Deployment & Services**: Deployed Linux VMs, installed and validated NGINX for end-to-end testing.
+
+- **Cost Management**: Configured scheduled VM shutdowns to optimize costs.
+
+- **Documentation**: Produced architecture diagram and structured README for interview readiness.
 
 ---
 
