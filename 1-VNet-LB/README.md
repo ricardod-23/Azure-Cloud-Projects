@@ -10,7 +10,6 @@ The resources were created manually in the **Azure Portal**, and the configurati
 
 The lab simulates a real-world scenario with frontend and backend workloads behind a **Standard Load Balancer**, protected by **Network Security Groups (NSGs)**, and with outbound connectivity via **NAT Gateway**.
 
----
 
 ## 🗂 Project Structure
 ```plaintext
@@ -24,11 +23,8 @@ Azure-Cloud-Projects/
 │   ├── parameters.json    # Parameters file (exported from Azure Portal)
 │   └── template.json      # ARM template (exported from Azure Portal)
 │
----
-└── README.md              # Project documentation
-
----
----
+└── README.md              # Project documentation 
+```
 
 ## 🔧 Deployment Method
 - All resources were deployed manually through the **Azure Portal**.  
