@@ -29,6 +29,8 @@ Azure-Cloud-Projects/
 
 ---
 
+---
+
 ## 🔧 Deployment Method
 - All resources were deployed manually through the **Azure Portal**.  
 - After deployment, the **ARM template** and **parameters file** were exported for reusability.  
@@ -36,13 +38,18 @@ Azure-Cloud-Projects/
 
 ---
 
+---
+
+
 ## 📊 Architecture Diagram
 ![Azure Lab Diagram](![Azure Lab Diagram](https://github.com/ricardod-23/Azure-Cloud-Projects/blob/main/1-VNet-LB/Diagram/RG-Lab.png)
 )
 
 ---
 
-## ⚙️ Components Deployed
+---
+
+# ⚙️ Components Deployed
 - **Virtual Network (VNet):** Address space `10.0.0.0/16`  
 - **Subnets:**  
   - `Subnet-FE (10.0.1.0/24)` → frontend VM  
@@ -56,6 +63,7 @@ Azure-Cloud-Projects/
   - One VM in **Subnet-BE**  
   - Installed **NGINX web server** on both VMs for testing  
 - **NAT Gateway:** Provides outbound internet access for the VMs  
+---
 
 ---
 
@@ -66,11 +74,12 @@ Azure-Cloud-Projects/
 - **Load Balancing:** Configured Standard Load Balancer for traffic distribution  
 - **Service Deployment:** Installed and tested NGINX on VMs to validate end-to-end connectivity  
 - **Documentation:** Produced network diagram and README for clarity and interview readiness  
-
 ---
 
+---
 ## 🚀 Next Steps / Improvements
 - Automate deployment using **Bicep** or **Terraform** instead of portal export  
 - Add **Azure Firewall** for centralized traffic inspection  
 - Integrate monitoring with **Azure Monitor** and **Log Analytics**  
 - Extend with **Application Gateway + WAF** for Layer 7 security  
+---
