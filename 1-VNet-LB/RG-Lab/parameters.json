@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "natGateways_NAT_Lab_name": {
+            "value": null
+        },
+        "virtualMachines_VM_BE_name": {
+            "value": null
+        },
+        "virtualMachines_VM_FE_name": {
+            "value": null
+        },
+        "virtualNetworks_VNet1_name": {
+            "value": null
+        },
+        "loadBalancers_LB_Public_name": {
+            "value": null
+        },
+        "publicIPAddresses_PIP_LB_name": {
+            "value": null
+        },
+        "publicIPAddresses_PIP_NAT_name": {
+            "value": null
+        },
+        "networkInterfaces_vm_fe455_name": {
+            "value": null
+        },
+        "networkSecurityGroups_NSG_BE_name": {
+            "value": null
+        },
+        "networkSecurityGroups_NSG_FE_name": {
+            "value": null
+        },
+        "networkInterfaces_vm_be637_z3_name": {
+            "value": null
+        },
+        "schedules_shutdown_computevm_vm_be_name": {
+            "value": null
+        },
+        "schedules_shutdown_computevm_vm_fe_name": {
+            "value": null
+        }
+    }
+}
