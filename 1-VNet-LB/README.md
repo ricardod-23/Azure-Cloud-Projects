@@ -34,7 +34,7 @@ Azure-Cloud-Projects/
 ---
 
 ## 📊 Architecture Diagram
-![Azure Lab Diagram](https://github.com/ricardod-23/Azure-Cloud-Projects/blob/main/1-VNet-LB/Diagram/RG-Lab.png)
+![Azure Lab Diagram](C:\Users\RD\OneDrive\Documents\GitHub\Azure-Cloud-Projects\1-VNet-LB\Diagram\RG-Lab.jpg)
 
 ---
 
@@ -51,15 +51,15 @@ Azure-Cloud-Projects/
 - **Network Security Groups (NSGs):**  
   - NSG-FE and NSG-BE with identical rules:  
     - Allow inbound **HTTP (80)** from Internet
-    - Allow inbound HTTP (80) from AzureLoadBalancer (for health probes)
+    - Allow inbound **HTTP (80)** from AzureLoadBalancer (for **health probes**)
     - Deny all other inbound traffic  
 
 - **Standard Load Balancer (LB-Public):**  
-  - Frontend IP: PIP-LB **(Static Public IP)**.
-  - Backend pool: Includes both **FE-VM and BE-VM**.
+  - **Frontend IP**: PIP-LB **(Static Public IP)**.
+  - **Backend pool**: Includes both **FE-VM and BE-VM**.
   - **Load balancing rule** forwards traffic on port **80(TCP)**.  
   - The **backend pool** includes the **FE-VM**.
-  - Health probe: Configured on **HTTP/80** for monitoring VM availabilit 
+  - **Health probe**: Configured on **HTTP/80** for monitoring VM availabilit 
 
 - **Virtual Machines (VMs):**  
   - **FE-VM:** Ubuntu 22.04, size Standard_D2s_v3, Spot instance. Runs **NGINX web server**.  
