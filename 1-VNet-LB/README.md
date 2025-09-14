@@ -34,7 +34,7 @@ Azure-Cloud-Projects/
 ---
 
 ## 📊 Architecture Diagram
-![Azure Lab Diagram](https://github.com/ricardod-23/Azure-Cloud-Projects/blob/main/1-VNet-LB/Diagram/RG-Lab.jpg)
+![Azure Lab Diagram](https://github.com/ricardod-23/Azure-Cloud-Projects/blob/main/1-VNet-LB/Diagram/RG-Lab.jpeg)
 
 ---
 
